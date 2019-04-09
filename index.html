@@ -8,8 +8,62 @@
 
    <body ng-app = "myapp">
 
-      <div ng-controller = "MainController" >
-         <h2>Welcome {{helloTo.title}} to the world of Tutorialspoint!</h2>
+     <div ng-controller = "MainController" >
+       <h2>This is my notes for {{tutorial.title}}.</h2>
+     </div>
+
+     <div class="">
+       <p>Enter your name: <input type="text" name="" value="" ng-model = "name"></p>
+       <p>Hello <span ng-bind = "name"></span>!</p>
+       <p>
+         Character Length :
+         <span ng-if = "!name">0</span>
+         <span ng-if = "name">{{name.length}}</span>
+       </p>
+     </div>
+
+      <div ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'},
+         {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]">
+         <h2>This is list from ng-init and applied uppercase filter</h2>
+         <ul>
+           <div class="" ng-repeat = "country in countries">
+             <li>{{country.name | uppercase}}</li>
+           </div>
+         </ul>
+      </div>
+
+      <input type = "checkbox" ng-model = "enableDisableButton">Disable Button
+      <button ng-disabled = "enableDisableButton">Click Me!</button>
+      <br>
+
+      <input type = "checkbox" ng-model = "showHide1">Show Button
+      <button ng-show = "showHide1">Click Me!</button>
+      <br>
+
+      <input type = "checkbox" ng-model = "showHide2">Hide Button
+      <button ng-hide = "showHide2">Click Me!</button>
+      <br>
+
+      <p>Total click: {{ clickCounter }}</p>
+      <button ng-click = "clickCounter = clickCounter + 1">Click Me!</button>
+      <br>
+
+      <div class="">
+        <h2>Events</h2>
+        <ul>
+          <li>ng-click</li>
+          <li>ng-dbl-click</li>
+          <li>ng-mousedown</li>
+          <li>ng-mouseup</li>
+          <li>ng-mouseenter</li>
+          <li>ng-mouseleave</li>
+          <li>ng-mousemove</li>
+          <li>ng-mouseover</li>
+          <li>ng-keydown</li>
+          <li>ng-keyup</li>
+          <li>ng-keypress</li>
+          <li>ng-change</li>
+        </ul>
       </div>
 
    </body>
